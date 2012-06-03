@@ -17,8 +17,9 @@ end
 
 module Offensive
   class Application < Rails::Application
-      config.sass.load_paths << "/Users/jan/.rvm/gems/ruby-1.9.3-p194@offensive/gems/compass-0.12.1/frameworks/compass/stylesheets"
-      config.sass.load_paths << "/Users/jan/.rvm/gems/ruby-1.9.3-p194@offensive/gems/compass-960-plugin-0.10.4/stylesheets"
+
+    config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/compass/stylesheets"
+    config.sass.load_paths << "#{Gem.loaded_specs['compass-960-plugin'].full_gem_path}/stylesheets"
 
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
