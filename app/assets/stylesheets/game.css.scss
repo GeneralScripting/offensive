@@ -1,0 +1,45 @@
+// Place all the styles related to the game controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "compass";
+
+$background_color: #FFFFFF;
+
+#main {
+  margin-top:20px;
+}
+
+header.navbar {
+  background:$background_color;
+  @include min-height(70px);
+  nav {
+    @include background(linear-gradient(top, #133783, #EEEEEE 10%, $background_color));
+    @include box-shadow(none);
+    @include min-height(70px);
+    .brand {
+      position:absolute;
+      top:7px;
+      left:10px;
+      color:#333;
+      img {
+        float:left;
+      }
+      .logo {
+        display:block;
+        position:relative;
+        top:-3px;
+        font-size:36px;
+        line-height:36px;
+        font-family:"LondrinaShadowRegular";
+        margin:0 0 0 60px;
+        padding:0;
+      }
+      .sub {
+        display:block;
+        font-size:12px;
+        margin:0 0 0 60px;
+      }
+    }
+  }
+}

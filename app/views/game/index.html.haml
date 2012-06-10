@@ -1,0 +1,6 @@
+
+%p#warning= t('.warning')
+
+= simple_form_for @offense, :remote => true do |f|
+  = f.input :body
+  = f.submit t('.submit_offense'), :disabled => true

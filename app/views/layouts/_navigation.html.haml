@@ -1,1 +1,11 @@
-= link_to "Offensive", root_path, :class => 'brand'
+.brand
+  = link_to image_tag('logo.png'), root_path, :id => 'logo'
+  .logo= t('.logo')
+  .sub= t('.powered_by').html_safe
+
+- if false
+  .how_to
+    = link_to t('.help_translate'), 'https://webtranslateit.com/en/projects/3972-EM-Game', :target => '_blank', :class => ['btn','btn-mini','btn-default','external']
+    = link_to t('.how'), page_path('howto'), :class => ['fancy','btn','btn-mini','btn-default']
+    = link_to t('.faq'), page_path('faq'), :class => ['fancy','btn','btn-mini','btn-default']
+    = link_to t('.invite'), "", :class => ['fancy','btn','btn-mini','btn-default', 'btn-warning'], :id => "invite_friends"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120603201705) do
+ActiveRecord::Schema.define(:version => 20120610155325) do
 
   create_table "invitations", :force => true do |t|
     t.integer  "user_id"
@@ -26,6 +26,21 @@ ActiveRecord::Schema.define(:version => 20120603201705) do
   add_index "invitations", ["guest_id"], :name => "index_invitations_on_guest_id"
   add_index "invitations", ["request_id"], :name => "index_invitations_on_request_id"
   add_index "invitations", ["user_id"], :name => "index_invitations_on_user_id"
+
+  create_table "offenses", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "body"
+    t.integer  "score",      :default => 0
+    t.integer  "won",        :default => 0
+    t.integer  "lost",       :default => 0
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "offenses", ["lost"], :name => "index_offenses_on_lost"
+  add_index "offenses", ["score"], :name => "index_offenses_on_score"
+  add_index "offenses", ["user_id"], :name => "index_offenses_on_user_id"
+  add_index "offenses", ["won"], :name => "index_offenses_on_won"
 
   create_table "users", :force => true do |t|
     t.string   "email"
